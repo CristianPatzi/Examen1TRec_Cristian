@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ToDoExamen</string>
+    <string name="list_works">List works</string>
+    <string name="expire_date">Expire date</string>
+    <string name="title_of_task">Title of task</string>
+    <string name="clear_all_tasks">Clear all tasks</string>
+    <string name="add_task">Add task</string>
+    <string name="pendding_tasks">"Pending Tasks: %1$s "</string>
+
+</resources>

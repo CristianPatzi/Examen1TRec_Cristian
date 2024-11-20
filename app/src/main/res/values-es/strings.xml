@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ToDoExamen</string>
+    <string name="list_works">Lista de Tareas</string>
+    <string name="add_task">Añadir Tarea</string>
+    <string name="clear_all_tasks">Borrar todas</string>
+    <string name="title_of_task">Título de la tarea</string>
+    <string name="expire_date">Fecha de vencinamiento</string>
+    <string name="pendding_tasks">"Tareas pendientes: %1$s "</string>
+</resources>
