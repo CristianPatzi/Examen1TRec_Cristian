@@ -17,8 +17,8 @@ class ToDoViewModel: ViewModel() {
             val currentList = currentState.tareas;
             currentList.add(tarea)
             currentState.copy(
-                tareas = currentList,
                 pendding = currentList.size,
+                tareas = currentList,
 
             )
 
@@ -30,8 +30,8 @@ class ToDoViewModel: ViewModel() {
             val currentList = currentState.tareas;
             currentList.clear()
             currentState.copy(
-                tareas = currentList,
                 pendding = currentList.size,
+                tareas = currentList,
                 )
 
         }

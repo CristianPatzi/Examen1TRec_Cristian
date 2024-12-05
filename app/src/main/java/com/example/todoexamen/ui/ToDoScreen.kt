@@ -44,6 +44,7 @@ fun TodoScreen(modifier: Modifier = Modifier, todoViewModel: ToDoViewModel = vie
 
     var title by rememberSaveable { mutableStateOf("") }
     var date by rememberSaveable { mutableStateOf("") }
+    var time by rememberSaveable { mutableStateOf("") }
 
     Scaffold(modifier = Modifier
         .fillMaxSize(),
@@ -58,17 +59,21 @@ fun TodoScreen(modifier: Modifier = Modifier, todoViewModel: ToDoViewModel = vie
             FormInputs(
                 title = title,
                 date = date,
+                time = time,
                 onDateChange = { date = it },
-                onTitleChange = { title = it }
+                onTitleChange = { title = it },
+                onTimeChange = {time = it}
             )
 
             FormActions(
                 addTask = {
-                    todoViewModel.addTask(Tarea(title, date))
+                    todoViewModel.addTask(Tarea(title, date, time))
                     title = "";
                     date = "";
+                    time = "";
                 },
-                clearAllTask = { todoViewModel.clearAllTask() }
+                clearAllTask = { todoViewModel.clearAllTask() },
+                undo = {}
             )
             Box(modifier = Modifier.height(dimensionResource(R.dimen.space_box)))
 
@@ -90,7 +95,8 @@ fun TodoScreen(modifier: Modifier = Modifier, todoViewModel: ToDoViewModel = vie
 fun FormActions(
     addTask: () -> Unit,
     clearAllTask: () -> Unit,
-) {
+    undo: () -> Unit,
+    ) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -104,6 +110,11 @@ fun FormActions(
             Text(text = stringResource(R.string.add_task))
 
         }
+        Button(onClick = undo) {
+            Text(text = stringResource(R.string.undo))
+
+        }
+
         Button(onClick = clearAllTask) {
             Text(text = stringResource(R.string.clear_all_tasks))
         }
@@ -114,8 +125,10 @@ fun FormActions(
 fun FormInputs(
     title: String,
     date: String,
+    time: String,
     onTitleChange: (String) -> Unit,
-    onDateChange: (String) -> Unit
+    onDateChange: (String) -> Unit,
+    onTimeChange: (String) -> Unit
 ) {
 
     Column(
@@ -146,6 +159,23 @@ fun FormInputs(
             ),
             label = {
                 Text(stringResource(R.string.expire_date))
+            },
+            modifier = Modifier.fillMaxWidth(),
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = colorScheme.surface,
+                unfocusedContainerColor = colorScheme.surface,
+                disabledContainerColor = colorScheme.surface,
+            ),
+
+            )
+        OutlinedTextField(
+            value = time,
+            onValueChange = onDateChange,
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Text
+            ),
+            label = {
+                Text(stringResource(R.string.expire_time))
             },
             modifier = Modifier.fillMaxWidth(),
             colors = TextFieldDefaults.colors(

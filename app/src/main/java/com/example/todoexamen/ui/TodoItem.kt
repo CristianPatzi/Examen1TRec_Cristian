@@ -26,6 +26,10 @@ fun TodoItem(tarea: Tarea) {
             text = "Fecha: ${tarea.date}",
             style = MaterialTheme.typography.bodyMedium,
         )
+        Text(
+            text = "Hora: ${tarea.time}",
+            style = MaterialTheme.typography.bodyMedium,
+        )
         Box(modifier = Modifier.height(dimensionResource(R.dimen.space_small_box)))
 
 
@@ -35,7 +39,8 @@ fun TodoItem(tarea: Tarea) {
 @Preview(backgroundColor = Color.WHITE.toLong())
 @Composable
 fun ItemPreview() {
-    TodoItem(tarea = Tarea("Cosas", "1/10/2024"))
+    TodoItem(tarea = Tarea("Cosas", "1/10/2024", "13:22"))
 }
+
 
 

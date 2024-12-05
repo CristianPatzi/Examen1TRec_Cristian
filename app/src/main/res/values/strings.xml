@@ -1,10 +1,12 @@
 <resources>
-    <string name="app_name">ToDoExamen</string>
-    <string name="list_works">List works</string>
-    <string name="expire_date">Expire date</string>
-    <string name="title_of_task">Title of task</string>
-    <string name="clear_all_tasks">Clear all tasks</string>
-    <string name="add_task">Add task</string>
-    <string name="pendding_tasks">"Pending Tasks: %1$s "</string>
+    <string name="app_name">Manager of Events</string>
+    <string name="list_works">Events</string>
+    <string name="expire_time">Hour</string>
+    <string name="expire_date">Date</string>
+    <string name="title_of_task">Title</string>
+    <string name="clear_all_tasks">Reset</string>
+    <string name="undo">Undo</string>
+    <string name="add_task">Add</string>
+    <string name="pendding_tasks">"Event Count: %1$s "</string>
 
 </resources>
